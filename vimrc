@@ -1,11 +1,11 @@
 set nocompatible
 
 call plug#begin()
-Plug 'tpope/vim-sensible.vim'
+Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep.vim'
-Plug 'tpope/vim-unimpaired.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-unimpaired'
 Plug 'keith/swift.vim'
 call plug#end()
 

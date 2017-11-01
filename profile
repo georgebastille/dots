@@ -36,7 +36,7 @@ GREEN=`tput setaf 2`
 RED=`tput setaf 1`
 YELLOW=`tput setaf 3`
 MAGENTA=`tput setaf 5`
-PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u@\h\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
 
 proxy() {
   [ `pgrep openvpn` ] && export https_proxy=http://proxy.bloomberg.com:80 || unset https_proxy

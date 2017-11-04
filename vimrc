@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-unimpaired'
 Plug 'keith/swift.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -40,8 +41,7 @@ nnoremap ±   <c-w>W
 
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>rg       :Rg <C-R><C-W><CR>
-
+nnoremap <silent> <Leader>rg       :Rg<CR>
 
 " Annoying temporary files
 set backupdir=/tmp//,.
@@ -56,4 +56,5 @@ nnoremap <C-s>     :update<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
 
-
+set background=dark
+colorscheme solarized

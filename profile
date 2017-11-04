@@ -27,7 +27,7 @@ alias cda='cd ~/repo/client/android/'
 alias cdr='cd ~/repo/'
 
 alias gitsuir='git submodule sync --recursive && git submodule update --init --recursive'
-alias gp='git pull && gitsuir'
+alias gp='noproxy && git pull && gitsuir'
 alias gs='git status'
 alias gco='git checkout'
 

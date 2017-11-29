@@ -8,6 +8,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-unimpaired'
 Plug 'keith/swift.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 set showcmd		        " display incomplete commands

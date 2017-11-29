@@ -13,9 +13,9 @@ _fzf_compgen_dir() {
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-source ~/bin/git-completion.bash
 source ~/bin/git-prompt.sh
 eval "$(register-python-argcomplete conda)"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 manFunc() {
   open x-man-page://$1
@@ -46,4 +46,4 @@ noproxy() {
   unset https_proxy
 }
 
-alias brew='proxy && brew && noproxy'
+#alias brew='proxy && brew && noproxy'

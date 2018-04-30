@@ -1,4 +1,4 @@
-export PATH=~/bin:/Users/rhanes/miniconda2/bin:$PATH
+export PATH=~/bin:/Users/rhanes/.miniconda2/bin:$PATH
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
@@ -14,7 +14,7 @@ _fzf_compgen_dir() {
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 source ~/bin/git-prompt.sh
-eval "$(register-python-argcomplete conda)"
+# eval "$(register-python-argcomplete conda)"
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 manFunc() {
@@ -23,6 +23,7 @@ manFunc() {
 
 alias man=manFunc
 alias cdd='cd ~/repo/client/ios/'
+alias cdb='cd ~/repo/b-cubed/'
 alias cda='cd ~/repo/client/android/'
 alias cdr='cd ~/repo/'
 
@@ -30,6 +31,8 @@ alias gitsuir='git submodule sync --recursive && git submodule update --init --r
 alias gp='noproxy && git pull && gitsuir'
 alias gs='git status'
 alias gco='git checkout'
+
+EDITOR='/usr/local/bin/vim'
 
 WHITE=`tput setaf 7`
 GREEN=`tput setaf 2`

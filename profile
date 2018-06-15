@@ -1,39 +1,16 @@
-export PATH=~/bin:/Users/rhanes/.miniconda2/bin:$PATH
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export SSL_CERT_FILE="/usr/local/etc/openssl/cert.pem"
-
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
+export PATH=~/bin:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-source ~/bin/git-prompt.sh
-# eval "$(register-python-argcomplete conda)"
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+source ~/.git-prompt.sh
 
-manFunc() {
-  open x-man-page://$1
-}
-
-alias man=manFunc
-alias cdd='cd ~/repo/client/ios/'
-alias cdb='cd ~/repo/b-cubed/'
-alias cda='cd ~/repo/client/android/'
-alias cdr='cd ~/repo/'
+alias cdd='cd ~/mymbig/'
 
 alias gitsuir='git submodule sync --recursive && git submodule update --init --recursive'
-alias gp='noproxy && git pull && gitsuir'
+alias gp='git pull && gitsuir'
 alias gs='git status'
 alias gco='git checkout'
 
-EDITOR='/usr/local/bin/vim'
+EDITOR='vim'
 
 WHITE=`tput setaf 7`
 GREEN=`tput setaf 2`
@@ -42,12 +19,12 @@ YELLOW=`tput setaf 3`
 MAGENTA=`tput setaf 5`
 PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u@\h\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
 
-proxy() {
-  [ `pgrep openvpn` ] && export https_proxy=`cat ~/.proxy` || unset https_proxy
-}
+export HISTSIZE=-1 
+export HISTFILESIZE=-1
+export HISTCONTROL=ignoredups:erasedups
 
-noproxy() {
-  unset https_proxy
-}
+# append history entries..
+shopt -s histappend
 
-#alias brew='proxy && brew && noproxy'
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"

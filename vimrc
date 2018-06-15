@@ -4,19 +4,20 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'rking/ag.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'keith/swift.vim'
 Plug 'tpope/vim-vinegar'
-Plug 'chriskempson/base16-vim'
-Plug 'lifepillar/vim-solarized8'
+"Plug 'lifepillar/vim-solarized8'
 Plug 'nvie/vim-flake8'
-Plug 'vim-scripts/a.vim'
+"Plug 'vim-scripts/a.vim'
 call plug#end()
 
 set showcmd		        " display incomplete commands
 set mouse=a
-set clipboard=unnamed
+"set clipboard=unnamed
+" Do not attempt to connect to remote X Server clipboard
+set clipboard=exclude:.*
 let mapleader      = ' '
 let maplocalleader = ' '
 
@@ -45,7 +46,7 @@ nnoremap ±   <c-w>W
 
 nnoremap <silent> <Leader><Leader>  :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <Leader>f :Ag<CR>
 nnoremap <silent> <Leader>r :History:<CR>
 
 " Annoying temporary files
@@ -65,9 +66,10 @@ nnoremap <leader>s :update<cr>
 "nnoremap ; :
 "nnoremap : ;
 
+"let g:solarized_use16 = 1
 set background=dark
 "colorscheme base16-solarized-dark
-colorscheme solarized8
+"colorscheme solarized8
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
@@ -90,7 +92,23 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Unmap A.vim insert mode leader keys
-silent! iunmap <Space>ihn
-silent! iunmap <Space>is
-silent! iunmap <Space>ih
+"silent! iunmap <Space>ihn
+"silent! iunmap <Space>is
+"silent! iunmap <Space>ih
 
+
+" From https://github.com/vim/vim/issues/2490#issuecomment-393973253
+function! ExitNormalMode()
+    unmap <buffer> <silent> <RightMouse>
+    call feedkeys("a")
+endfunction
+
+function! EnterNormalMode()
+    if &buftype == 'terminal' && mode('') == 't'
+        call feedkeys("\<c-w>N")
+        call feedkeys("\<c-y>")
+        map <buffer> <silent> <RightMouse> :call ExitNormalMode()<CR>
+    endif
+endfunction
+
+tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>

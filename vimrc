@@ -4,18 +4,19 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'rking/ag.vim'
 Plug 'tpope/vim-unimpaired'
-Plug 'keith/swift.vim'
 Plug 'tpope/vim-vinegar'
-Plug 'chriskempson/base16-vim'
-Plug 'lifepillar/vim-solarized8'
+Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ericcurtin/CurtineIncSw.vim'
 call plug#end()
 
 set showcmd		        " display incomplete commands
 set mouse=a
-set clipboard=unnamed
+" Do not attempt to connect to remote X Server clipboard
+set clipboard=exclude:.*
 let mapleader      = ' '
 let maplocalleader = ' '
 
@@ -42,9 +43,18 @@ nnoremap <leader>c :cclose<bar>lclose<cr>
 nnoremap §   <c-w>w
 nnoremap ±   <c-w>W
 
-nnoremap <silent> <Leader><Leader> :Files<CR>
+set splitbelow
+set splitright
+
+nnoremap <silent> <Leader><Leader>  :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>rg       :Rg<CR>
+nnoremap <silent> <Leader>f :Ag<CR>
+nnoremap <silent> <Leader>r :History:<CR>
+
+nnoremap <silent> <Leader>v <C-W>v
+nnoremap <silent> <Leader>s <C-W>s
+nnoremap <silent> <Leader>h :call CurtineIncSw()<CR>
+nnoremap <silent> <Leader>n :noh<CR>
 
 " Annoying temporary files
 set backupdir=/tmp//,.
@@ -54,18 +64,10 @@ if v:version >= 703
 endif
 
 " Save
-inoremap <C-s> <C-O>:update<cr>
-nnoremap <C-s> :update<cr>
-nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
 
-" Colon goodness
-"nnoremap ; :
-"nnoremap : ;
-
 set background=dark
-"colorscheme base16-solarized-dark
-colorscheme solarized8
+colorscheme elflord
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
@@ -78,3 +80,50 @@ set shiftwidth=4
 set expandtab
 
 set guifont=Menlo:h15
+
+" change cursor btw Normal & Insert mode
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Use %% as the path of the current buffer (without the filename)
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Unmap A.vim insert mode leader keys
+"silent! iunmap <Space>ihn
+"silent! iunmap <Space>is
+"silent! iunmap <Space>ih
+
+
+" From https://github.com/vim/vim/issues/2490#issuecomment-393973253
+function! ExitNormalMode()
+    unmap <buffer> <silent> <RightMouse>
+    call feedkeys("a")
+endfunction
+
+function! EnterNormalMode()
+    if &buftype == 'terminal' && mode('') == 't'
+        call feedkeys("\<c-w>N")
+        call feedkeys("\<c-y>")
+        map <buffer> <silent> <RightMouse> :call ExitNormalMode()<CR>
+    endif
+endfunction
+
+tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
+
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
+" Default Colors for CursorLine
+"highlight  CursorLine ctermbg=Grey ctermfg=None
+
+" Change Color when entering Insert Mode
+"autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
+
+" Revert Color to default when leaving Insert Mode
+"autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None
+
+set hlsearch

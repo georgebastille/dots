@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{date:yyyy-MM-dd'T'HH:mm:ssZZZZZ}",
+    "uid" : "463C3151-C433-4832-BD71-BAD2593AA3DB",
+    "name" : "ISO Date",
+    "keyword" : "date_iso"
+  }
+}

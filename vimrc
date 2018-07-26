@@ -7,8 +7,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-unimpaired'
 Plug 'keith/swift.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-vinegar'
+Plug 'chriskempson/base16-vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -52,10 +54,27 @@ if v:version >= 703
 endif
 
 " Save
-inoremap <C-s>     <C-o>:update<cr>
-nnoremap <C-s>     :update<cr>
+inoremap <C-s> <C-O>:update<cr>
+nnoremap <C-s> :update<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
 
+" Colon goodness
+"nnoremap ; :
+"nnoremap : ;
+
 set background=dark
-colorscheme solarized
+"colorscheme base16-solarized-dark
+colorscheme solarized8
+
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+set guifont=Menlo:h15

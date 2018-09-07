@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ericcurtin/CurtineIncSw.vim'
+Plug 'chazy/cscope_maps'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -96,29 +97,29 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 
 " From https://github.com/vim/vim/issues/2490#issuecomment-393973253
-function! ExitNormalMode()
-    unmap <buffer> <silent> <RightMouse>
-    call feedkeys("a")
-endfunction
-
-function! EnterNormalMode()
-    if &buftype == 'terminal' && mode('') == 't'
-        call feedkeys("\<c-w>N")
-        call feedkeys("\<c-y>")
-        map <buffer> <silent> <RightMouse> :call ExitNormalMode()<CR>
-    endif
-endfunction
-
-tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
+"function! ExitNormalMode()
+"    unmap <buffer> <silent> <RightMouse>
+"    call feedkeys("a")
+"endfunction
+"
+"function! EnterNormalMode()
+"    if &buftype == 'terminal' && mode('') == 't'
+"        call feedkeys("\<c-w>N")
+"        call feedkeys("\<c-y>")
+"        map <buffer> <silent> <RightMouse> :call ExitNormalMode()<CR>
+"    endif
+"endfunction
+"
+"tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 
 augroup CursorLineOnlyInActiveWindow
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
-
+"
 " Default Colors for CursorLine
-"highlight  CursorLine ctermbg=Grey ctermfg=None
+highlight  CursorLine ctermbg=Grey ctermfg=None
 
 " Change Color when entering Insert Mode
 "autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
@@ -127,3 +128,5 @@ augroup END
 "autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None
 
 set hlsearch
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+

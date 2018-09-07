@@ -11,7 +11,7 @@ alias gp='git pull && gitsuir'
 alias gs='git status'
 alias gco='git checkout'
 alias github='env GIT_SSL_NO_VERIFY=true'
-alias vim='github vim'
+#alias vim='github vim'
 
 EDITOR='vim'
 
@@ -32,3 +32,5 @@ shopt -s histappend
 
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export TZ=/usr/share/zoneinfo/Europe/London
+export LANG=en_US.UTF-8

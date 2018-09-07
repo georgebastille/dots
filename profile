@@ -1,4 +1,4 @@
-export PATH=~/bin:/Users/rhanes/.miniconda2/bin:$PATH
+export PATH=~/bin:~/repo/mactoolkit:/Users/rhanes/.miniconda2/bin:$PATH
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
@@ -31,6 +31,7 @@ alias gitsuir='git submodule sync --recursive && git submodule update --init --r
 alias gp='noproxy && git pull && gitsuir'
 alias gs='git status'
 alias gco='git checkout'
+alias mount_mbig='sshfs devsftp:/bb/mbigd/mbig919 /Users/rhanes/mbig -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=mbig'
 
 EDITOR='/usr/local/bin/vim'
 

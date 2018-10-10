@@ -71,7 +71,7 @@ nnoremap <leader>w :update<cr>
 
 set background=dark
 "colorscheme base16-solarized-dark
-colorscheme solarized8
+"colorscheme solarized8
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 

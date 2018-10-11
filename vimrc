@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-dispatch'
 Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
@@ -51,6 +52,7 @@ nnoremap <silent> <Leader><Leader>  :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 nnoremap <silent> <Leader>f :Ag<CR>
 nnoremap <silent> <Leader>r :History:<CR>
+nnoremap <silent> <Leader>m :Make<CR>
 
 nnoremap <silent> <Leader>v <C-W>v
 nnoremap <silent> <Leader>s <C-W>s
@@ -119,7 +121,7 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 "
 " Default Colors for CursorLine
-highlight  CursorLine ctermbg=Grey ctermfg=None
+"highlight  CursorLine ctermbg=Grey ctermfg=None
 
 " Change Color when entering Insert Mode
 "autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
@@ -129,4 +131,10 @@ highlight  CursorLine ctermbg=Grey ctermfg=None
 
 set hlsearch
 set cscopequickfix=s-,c-,d-,i-,t-,e-
+set number relativenumber
+
+set path+=**
+set nocscopetag
+set wildmenu
+set wildmode=longest:full,full
 

@@ -26,6 +26,6 @@
     proxy = devproxy.bloomberg.com:82
     sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
 	
-#[http "https://github.com"]
+[http "https://github.com"]
     #proxy = http://proxy.bloomberg.com:80
-#	proxy = http://devproxy.bloomberg.com:82
+	proxy = http://devproxy.bloomberg.com:82

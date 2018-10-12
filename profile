@@ -2,7 +2,7 @@
 [[ $- == *i* ]] || return
 
 
-#echo ".profile has run"
+echo ".profile has run"
 export PATH=~/bin:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

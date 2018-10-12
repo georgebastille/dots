@@ -51,3 +51,4 @@ noproxy() {
 }
 
 #alias brew='proxy && brew && noproxy'
+export LANG=en_US.UTF-8

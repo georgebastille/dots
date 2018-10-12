@@ -24,8 +24,8 @@
 [url "https://bbgithub.dev.bloomberg.com/"]
 	insteadOf = bbgithub:
 	
-[http "https://github.com"]
-	proxy = http://proxy.bloomberg.com:80
+#[http "https://github.com"]
+#	proxy = http://proxy.bloomberg.com:80
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

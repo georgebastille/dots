@@ -4,7 +4,7 @@
 alias ls='ls --color -h --group-directories-first'
 
 alias gitsuir='git submodule sync --recursive && git submodule update --init --recursive'
-alias gp='git pull && gitsuir'
+alias gp='git pull'
 alias gs='git status'
 alias gco='git checkout'
 
@@ -15,6 +15,6 @@ GREEN=`tput setaf 2`
 RED=`tput setaf 1`
 YELLOW=`tput setaf 3`
 MAGENTA=`tput setaf 5`
-PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u@\h\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+export PS1="\[\e[32m\]\A\[\e[m\] \[\e[31m\]\W\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e[m\]: "
 
 echo ".bashrc has run"

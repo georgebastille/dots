@@ -1,0 +1,10 @@
+set editing-mode vi
+
+# vi settings
+$if mode=vi
+    set keymap vi-insert
+    "jk": vi-movement-mode # remap escape
+    set show-mode-in-prompt on
+    Control-p: history-search-backward
+$endif
+#

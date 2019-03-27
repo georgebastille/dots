@@ -11,8 +11,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ericcurtin/CurtineIncSw.vim'
-Plug 'chazy/cscope_maps'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -72,7 +71,8 @@ nnoremap <leader>w :update<cr>
 set background=dark
 colorscheme elflord
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:▸\ ,eol:¬
+nmap <leader>l :set list!<CR>
 
 filetype plugin indent on
 " show existing tab with 4 spaces width

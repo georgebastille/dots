@@ -1,13 +1,8 @@
 [user]
-	email = rhanes@bloomberg.com
+	email = rhanes@bloomberg.net
 	name = Richard Hanes
 [push]
 	default = current
-[core]
-	excludesfile = /Users/rhanes/.gitignore_global
-	autocrlf = input
-[commit]
-	template = /Users/rhanes/.stCommitMsg
 [alias]
     logdog = log --decorate --oneline --graph
     logdogsimple = log --decorate --oneline --graph --simplify-by-decoration
@@ -25,13 +20,13 @@
 [url "https://bbgithub.dev.bloomberg.com/"]
 	insteadOf = bbgithub:
 	
-#[http "https://github.com"]
-#	proxy = http://proxy.bloomberg.com:80
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [credential]
 	helper = osxkeychain
+
+#[http]
+#    proxy = devproxy.bloomberg.com:82
+#    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
+	
+[http "https://github.com"]
+    #proxy = http://proxyeu.bloomberg.com:81
+	proxy = http://devproxy.bloomberg.com:82

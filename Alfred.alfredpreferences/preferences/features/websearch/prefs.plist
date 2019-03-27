@@ -4,10 +4,23 @@
 <dict>
 	<key>customSites</key>
 	<dict>
-		<key>D6C69BFD-1EBD-4704-A2AC-695CC2877FFC</key>
+		<key>96E30181-A261-4F09-9215-A7E43C141C6C</key>
 		<dict>
 			<key>enabled</key>
 			<true/>
+			<key>keyword</key>
+			<string>b</string>
+			<key>text</key>
+			<string>bbgithub</string>
+			<key>url</key>
+			<string>https://bbgithub.dev.bloomberg.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>D6C69BFD-1EBD-4704-A2AC-695CC2877FFC</key>
+		<dict>
+			<key>enabled</key>
+			<false/>
 			<key>keyword</key>
 			<string>b</string>
 			<key>text</key>

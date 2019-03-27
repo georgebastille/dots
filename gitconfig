@@ -5,6 +5,7 @@
 	default = current
 [core]
 	excludesfile = /Users/rhanes/.gitignore_global
+	autocrlf = input
 [commit]
 	template = /Users/rhanes/.stCommitMsg
 [alias]

@@ -15,6 +15,7 @@ GREEN=`tput setaf 2`
 RED=`tput setaf 1`
 YELLOW=`tput setaf 3`
 MAGENTA=`tput setaf 5`
-PS1="\[$GREEN\]\t\[$RED\]-\u@\h:\[$YELLOW\]\W\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+#PS1="\[$GREEN\]\t\[$RED\]-\u@\h:\[$YELLOW\]\W\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+export PS1="\[\e[32m\]\A\[\e[m\] \[\e[31m\]\W\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e[m\]: "
 
 echo ".bashrc has run"

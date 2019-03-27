@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+PATH=~/.local/bin:$PATH
+
+#export PYTHONPATH=/bb/bigstorn/news/libnlp/python3.6:$PYTHONPATH
+export PYTHONPATH=/bb/bigstorn/news/libnlp/python2.7:$PYTHONPATH
 alias cdd='cd ~/mymbig/'
 alias github='env GIT_SSL_NO_VERIFY=true'
 #alias vim='github vim'

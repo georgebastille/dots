@@ -20,11 +20,11 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 
-[url "https://bbgithub.dev.bloomberg.com/"]
-	insteadOf = bbgithub:
-[http]
-    proxy = devproxy.bloomberg.com:82
-    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
+#[url "https://bbgithub.dev.bloomberg.com/"]
+#	insteadOf = bbgithub:
+#[http]
+#    proxy = devproxy.bloomberg.com:82
+#    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
 	
 [http "https://github.com"]
     #proxy = http://proxy.bloomberg.com:80

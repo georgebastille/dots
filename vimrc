@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 set showcmd		        " display incomplete commands

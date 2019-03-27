@@ -10,3 +10,6 @@
 [submodule "tmux/plugins/vim-tmux-navigator"]
 	path = tmux/plugins/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "iterm2/itermColours"]
+	path = iterm2/itermColours
+	url = https://github.com/martinlindhe/base16-iterm2.git

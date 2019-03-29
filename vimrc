@@ -13,6 +13,8 @@ Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug '5long/pytest-vim-compiler'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -131,7 +133,7 @@ augroup END
 "autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None
 
 set hlsearch
-set cscopequickfix=s-,c-,d-,i-,t-,e-
+"set cscopequickfix=s-,c-,d-,i-,t-,e-
 set number relativenumber
 
 set path+=**
@@ -142,3 +144,7 @@ if has("gui_running")
     " set macvim specific stuff
     set clipboard=unnamed
 endif
+
+" Call Flake8 on save for Python files
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_show_in_gutter=1  " show

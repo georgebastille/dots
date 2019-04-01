@@ -20,13 +20,14 @@
 [url "https://bbgithub.dev.bloomberg.com/"]
 	insteadOf = bbgithub:
 	
-[credential]
-	helper = osxkeychain
+#[credential]
+#	helper = osxkeychain
 
 #[http]
 #    proxy = devproxy.bloomberg.com:82
 #    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
 	
 [http "https://github.com"]
-    proxy = http://proxyeu.bloomberg.com:81
-    #proxy = http://devproxy.bloomberg.com:82
+#    proxy = http://proxyeu.bloomberg.com:81
+    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
+    proxy = http://devproxy.bloomberg.com:82

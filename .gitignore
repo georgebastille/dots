@@ -6,3 +6,35 @@ Trolltech.conf
 fontconfig/
 gtk-2.0/
 htop/
+[user]
+	email = rhanes@bloomberg.net
+	name = Richard Hanes
+[push]
+	default = current
+[alias]
+    logdog = log --decorate --oneline --graph
+    logdogsimple = log --decorate --oneline --graph --simplify-by-decoration
+    undo = reset --hard
+    su = submodule update
+    suir = submodule update --init --recursive
+	co = checkout
+	br = branch
+	cm = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+    fix = "!f() { ${EDITOR} `git diff --name-only`; }; f"
+
+[url "https://bbgithub.dev.bloomberg.com/"]
+	insteadOf = bbgithub:
+	
+[credential]
+	helper = osxkeychain
+
+#[http]
+#    proxy = devproxy.bloomberg.com:82
+#    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
+	
+[http "https://github.com"]
+    proxy = http://proxyeu.bloomberg.com:81
+    #proxy = http://devproxy.bloomberg.com:82

@@ -26,3 +26,7 @@
 	
 [http "https://github.com"]
     proxy = http://devproxy.bloomberg.com:82
+[oh-my-zsh]
+	hide-dirty = 1
+[pager]
+	branch = false

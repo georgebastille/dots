@@ -30,3 +30,5 @@
 [http "https://github.com"]
     proxy = http://proxyeu.bloomberg.com:81
     #proxy = http://devproxy.bloomberg.com:82
+[pager]
+	branch = false

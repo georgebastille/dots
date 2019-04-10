@@ -70,6 +70,7 @@ plugins=(
   git
   fzf
   z
+  vi-mode
   )
 
 ZSH_DISABLE_COMPFIX=true
@@ -89,6 +90,10 @@ fi
 if [ -f ~/.mac_zsh ]; then 
     source ~/.mac_zsh 
 fi
+
+bindkey -M viins 'jk' vi-cmd-mode
+export KEYTIMEOUT=20
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

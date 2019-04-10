@@ -68,7 +68,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  fzf
   z
   vi-mode
   )
@@ -78,7 +77,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR='vim'
-export FZF_BASE=/usr/local/bin/fzf
 alias gitsuir='git submodule sync --recursive && git submodule update --init --recursive'
 alias gp='git pull'
 alias gs='git status'
@@ -118,3 +116,4 @@ export KEYTIMEOUT=20
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+

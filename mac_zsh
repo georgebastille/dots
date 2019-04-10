@@ -14,3 +14,6 @@ proxy () {
 noproxy () {
   unset http{,s}_proxy
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#export FZF_BASE=/usr/local/bin

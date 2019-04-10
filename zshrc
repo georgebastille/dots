@@ -69,6 +69,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   fzf
+  z
   )
 
 ZSH_DISABLE_COMPFIX=true

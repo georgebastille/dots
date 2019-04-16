@@ -1,6 +1,6 @@
-source ~/.config/antigen/antigen.zsh
+#source ~/.config/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+#antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 #antigen bundle git
@@ -10,10 +10,10 @@ antigen use oh-my-zsh
 #antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme robbyrussell
+#antigen theme robbyrussell
 
 # Tell Antigen that you're done.
-antigen apply
+#antigen apply
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -38,3 +38,4 @@ fi
 
 bindkey -M viins 'jk' vi-cmd-mode
 export KEYTIMEOUT=20
+zstyle ':completion:*' list-colors

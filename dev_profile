@@ -9,6 +9,8 @@ alias cdd='cd ~/mymbig/'
 alias github='env GIT_SSL_NO_VERIFY=true'
 #alias vim='github vim'
 
+export CDPATH='~:~/mymbig'
+
 export PLINK_CCACHE_DIR=~/mymbig/.cache/
 export TZ=/usr/share/zoneinfo/Europe/London
 export LANG=en_US.UTF-8
@@ -24,21 +26,4 @@ export LC_ALL=en_US.UTF-8
 # if chimera generated aliases exist, pull them into the current ENV
 [ -f ~/.bbalias ] && . ~/.bbalias
 
-pw() {
-    if [[ $# -eq 0 ]]; then
-        echo "Usage : pw <user type> [Machine Specification]";
-    else
-        if [[ $# -eq 1 ]]; then
-            echo "Op1 Window for $*";
-            getprdwin -i -d "Op1 Window for $*" -u op1 $*;
-        else
-            USER_TYPE=$1;
-            shift 1;
-            echo "$USER_TYPE Window for $*";
-            getprdwin -d "$USER_TYPE Window for $*" -u $USER_TYPE $*;
-        fi;
-    fi
-}
-
-
-echo ".dev_profile has run"
+#echo ".dev_profile has run"

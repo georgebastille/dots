@@ -23,12 +23,14 @@
 [credential]
 	helper = osxkeychain
 
-#[http]
-#    proxy = devproxy.bloomberg.com:82
-#    sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
+[merge]
+    # A wonderful default diffing tool.
+    tool = vimdiff
+    # Provide base context to aid in conflict resolution.
+    conflictstyle = diff3
 	
 [http "https://github.com"]
     proxy = http://proxyeu.bloomberg.com:81
-    #proxy = http://devproxy.bloomberg.com:82
+
 [pager]
 	branch = false

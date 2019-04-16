@@ -23,10 +23,15 @@
 [http]
     proxy = devproxy.bloomberg.com:82
     sslCAInfo = /home/secdeply/cacerts/MITM_cert.pem
+
+[merge]
+    # A wonderful default diffing tool.
+    tool = vimdiff
+    # Provide base context to aid in conflict resolution.
+    conflictstyle = diff3
 	
 [http "https://github.com"]
     proxy = http://devproxy.bloomberg.com:82
-[oh-my-zsh]
-	hide-dirty = 1
+
 [pager]
 	branch = false

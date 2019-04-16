@@ -25,6 +25,9 @@ alias man=manFunc
 
 alias gp='noproxy && git pull && gitsuir'
 alias cdd='cd ~/repo'
+
+export CDPATH='~:~/repo'
+
 alias mount_mbig='sshfs devsftp:/bb/mbigd/mbig919 /Users/rhanes/mbig -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=mbig'
 
 proxy() {
@@ -37,6 +40,6 @@ noproxy() {
 
 export LANG=en_US.UTF-8
 
-unset PROMPT_COMMAND 
+#unset PROMPT_COMMAND 
 
-echo ".mac_profile has run"
+#echo ".mac_profile has run"

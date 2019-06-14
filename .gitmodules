@@ -13,9 +13,6 @@
 [submodule "iterm2/itermColours"]
 	path = iterm2/itermColours
 	url = https://github.com/martinlindhe/base16-iterm2.git
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen
 [submodule "z"]
 	path = z
 	url = https://github.com/rupa/z.git

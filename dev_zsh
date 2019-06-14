@@ -1,9 +1,0 @@
-PATH=~/.local/bin:$PATH
-export PLINK_CCACHE_DIR=~/mymbig/.cache/
-
-export TZ=/usr/share/zoneinfo/Europe/London
-export LC_ALL=en_US.UTF-8
-
-alias cdd='cd ~/mymbig/'
-unset RPS1
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

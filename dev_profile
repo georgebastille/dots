@@ -9,7 +9,7 @@ alias cdd='cd ~/mymbig/'
 alias github='env GIT_SSL_NO_VERIFY=true'
 #alias vim='github vim'
 
-export CDPATH='~:~/mymbig'
+#export CDPATH='~:~/mymbig'
 
 export PLINK_CCACHE_DIR=~/mymbig/.cache/
 export TZ=/usr/share/zoneinfo/Europe/London

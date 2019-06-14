@@ -46,7 +46,7 @@ shopt -s globstar
 shopt -s histappend
 
 # a command name that is the name of a directory is executed as if it were the argument to the cd command
-shopt -s autocd
+# shopt -s autocd
 
 # Don't start auto-completion if there is nothing on the command line.
 shopt -s no_empty_cmd_completion

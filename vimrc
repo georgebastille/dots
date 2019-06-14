@@ -13,7 +13,6 @@ Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
-Plug '5long/pytest-vim-compiler'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -54,11 +53,11 @@ nnoremap <silent> <Leader>n :noh<CR>
 nnoremap <leader>w :update<cr>
 
 " Annoying temporary files
-set backupdir=/tmp//,.
-set directory=/tmp//,.
-if v:version >= 703
-  set undodir=/tmp//,.
-endif
+" set backupdir=/tmp//,.
+" set directory=/tmp//,.
+" if v:version >= 703
+"   set undodir=/tmp//,.
+" endif
 
 " Save
 

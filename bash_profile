@@ -1,9 +1,11 @@
 # .bash_profile
 
-export PATH=~/bin:$PATH
 export HISTSIZE=-1 
 export HISTFILESIZE=-1
 export HISTCONTROL=ignoreboth:erasedups
+
+[ -d ~/.config/bin ] && export PATH=~/.config/bin:$PATH
+[ -d ~/.bbconfig/bin ] && export PATH=~/.bbconfig/bin:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.config/z/z.sh ] && source ~/.config/z/z.sh

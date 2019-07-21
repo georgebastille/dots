@@ -1,5 +1,6 @@
 # .bash_profile
 
+
 export HISTSIZE=-1 
 export HISTFILESIZE=-1
 export HISTCONTROL=ignoreboth:erasedups
@@ -11,6 +12,7 @@ export HISTCONTROL=ignoreboth:erasedups
 [ -f ~/.config/z/z.sh ] && source ~/.config/z/z.sh
 [ -f ~/.dev_profile ] && source ~/.dev_profile
 [ -f ~/.mac_profile ] && source ~/.mac_profile
+[ -f ~/.crostini_profile ] && source ~/.crostini_profile
 
 # Goodies here:
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html#The-Shopt-Builtin
@@ -59,4 +61,4 @@ shopt -s no_empty_cmd_completion
 # Get the aliases and functions
 [ -r ~/.bashrc ] && . ~/.bashrc
 
-#echo ".bash_profile has run"
+echo ".bash_profile has run"

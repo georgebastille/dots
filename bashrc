@@ -16,4 +16,4 @@ EDITOR='vim'
 #MAGENTA=`tput setaf 5`
 export PS1="\[\e[32m\]\A\[\e[m\] \[\e[31m\]\W\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e[m\]: "
 
-#echo ".bashrc has run"
+echo ".bashrc has run"

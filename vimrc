@@ -75,13 +75,13 @@ nmap <leader>l :set list!<CR>
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
-set tabstop=4
+" set tabstop=4
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+" set shiftwidth=4
 " On pressing tab, insert 4 spaces
-set expandtab
+" set expandtab
+autocmd FileType javascript set shiftwidth=2
 
-set guifont=Menlo:h15
 
 " Use %% as the path of the current buffer (without the filename)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -101,6 +101,7 @@ set wildmode=longest:full,full
 
 if has("gui_running")
     " set macvim specific stuff
+    set guifont=Ubuntu\ Mono:h18
     set clipboard=unnamed
     " change cursor btw Normal & Insert mode
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"

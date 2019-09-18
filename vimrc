@@ -86,11 +86,8 @@ set guifont=Menlo:h15
 " Use %% as the path of the current buffer (without the filename)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 set hlsearch
 set number relativenumber

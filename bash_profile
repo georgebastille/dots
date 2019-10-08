@@ -4,13 +4,6 @@ export HISTSIZE=-1
 export HISTFILESIZE=-1
 export HISTCONTROL=ignoreboth:erasedups
 
-[ -d ~/.config/bin ] && export PATH=~/.config/bin:$PATH
-[ -d ~/.bbconfig/bin ] && export PATH=~/.bbconfig/bin:$PATH
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.config/z/z.sh ] && source ~/.config/z/z.sh
-[ -f ~/.dev_profile ] && source ~/.dev_profile
-[ -f ~/.mac_profile ] && source ~/.mac_profile
 
 # Goodies here:
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html#The-Shopt-Builtin
@@ -56,7 +49,13 @@ shopt -s no_empty_cmd_completion
 # After each command, save and reload history
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-# Get the aliases and functions
+[ -d ~/.config/bin ] && export PATH=~/.config/bin:$PATH
+[ -d ~/.bbconfig/bin ] && export PATH=~/.bbconfig/bin:$PATH
+
 [ -r ~/.bashrc ] && . ~/.bashrc
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.config/z/z.sh ] && source ~/.config/z/z.sh
+[ -f ~/.dev_profile ] && source ~/.dev_profile
+[ -f ~/.mac_profile ] && source ~/.mac_profile
 
 #echo ".bash_profile has run"

@@ -1,9 +1,12 @@
 # .bash_profile
 
+
 export HISTSIZE=-1 
 export HISTFILESIZE=-1
 export HISTCONTROL=ignoreboth:erasedups
 
+[ -d ~/.config/bin ] && export PATH=~/.config/bin:$PATH
+[ -d ~/.bbconfig/bin ] && export PATH=~/.bbconfig/bin:$PATH
 
 # Goodies here:
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html#The-Shopt-Builtin
@@ -57,5 +60,6 @@ shopt -s no_empty_cmd_completion
 [ -f ~/.config/z/z.sh ] && source ~/.config/z/z.sh
 [ -f ~/.dev_profile ] && source ~/.dev_profile
 [ -f ~/.mac_profile ] && source ~/.mac_profile
+[ -f ~/.crostini_profile ] && source ~/.crostini_profile
 
-#echo ".bash_profile has run"
+echo ".bash_profile has run"

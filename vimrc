@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -73,6 +74,9 @@ colorscheme elflord
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
 
+" Automatically save before running make
+set autowrite
+
 filetype plugin indent on
 " show existing tab with 4 spaces width
 " set tabstop=4
@@ -109,6 +113,22 @@ endif
 " Call Flake8 on save for Python files
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter=1  " show
+
+" Go https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+let g:go_list_type = "quickfix"
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>m :<C-u>call <SID>build_go_files()<CR>
+
 
 "set cscopequickfix=s-,c-,d-,i-,t-,e-
 "set nocscopetag

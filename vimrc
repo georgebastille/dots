@@ -21,6 +21,7 @@ Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'psf/black'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -60,11 +61,11 @@ nnoremap <silent> <Leader>n :noh<CR>
 nnoremap <leader>w :update<cr>
 
 " Annoying temporary files
-" set backupdir=/tmp//,.
-" set directory=/tmp//,.
-" if v:version >= 703
-"   set undodir=/tmp//,.
-" endif
+set backupdir=/tmp//,.
+set directory=/tmp//,.
+if v:version >= 703
+  set undodir=/tmp//,.
+endif
 
 " Save
 

@@ -57,9 +57,10 @@ shopt -s no_empty_cmd_completion
 
 [ -r ~/.bashrc ] && . ~/.bashrc
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /etc/bash_completion ] && source /etc/bash_completion
 [ -f ~/.config/z/z.sh ] && source ~/.config/z/z.sh
 [ -f ~/.dev_profile ] && source ~/.dev_profile
 [ -f ~/.mac_profile ] && source ~/.mac_profile
 [ -f ~/.crostini_profile ] && source ~/.crostini_profile
 
-echo ".bash_profile has run"
+echo "Morning Sunshine!"

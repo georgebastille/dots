@@ -26,7 +26,7 @@ call plug#end()
 set showcmd		        " display incomplete commands
 set mouse=a
 " Do not attempt to connect to remote X Server clipboard
-set clipboard=exclude:.*
+" set clipboard=exclude:.*
 let mapleader      = ' '
 let maplocalleader = ' '
 
@@ -79,11 +79,11 @@ set autowrite
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
-" set tabstop=4
+set tabstop=4
 " when indenting with '>', use 4 spaces width
-" set shiftwidth=4
+set shiftwidth=4
 " On pressing tab, insert 4 spaces
-" set expandtab
+set expandtab
 autocmd FileType javascript set shiftwidth=2
 
 

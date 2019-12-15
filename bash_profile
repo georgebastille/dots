@@ -62,5 +62,7 @@ shopt -s no_empty_cmd_completion
 [ -f ~/.dev_profile ] && source ~/.dev_profile
 [ -f ~/.mac_profile ] && source ~/.mac_profile
 [ -f ~/.crostini_profile ] && source ~/.crostini_profile
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
 
 echo "Morning Sunshine!"

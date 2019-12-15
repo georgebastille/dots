@@ -3,3 +3,4 @@
 	name = Rich Hanes
 [credential]
 	helper = store
+# TODO: copy aliases into here

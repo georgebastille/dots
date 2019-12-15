@@ -8,3 +8,5 @@ gtk-2.0/
 htop/
 pulse/
 configstore/
+cros-garcon.conf
+weston.ini

@@ -17,7 +17,7 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'nvie/vim-flake8'
+"Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -112,8 +112,12 @@ if has("gui_running")
 endif
 
 " Call Flake8 on save for Python files
-autocmd BufWritePost *.py call Flake8()
-let g:flake8_show_in_gutter=1  " show
+" Deprecated by black
+" autocmd BufWritePost *.py call Flake8()
+" let g:flake8_show_in_gutter=1  " show
+
+" Run Black on save.
+autocmd BufWritePre *.py execute ':Black'
 
 " Go https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup
 autocmd FileType go nmap <leader>r  <Plug>(go-run)

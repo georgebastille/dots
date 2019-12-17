@@ -1,4 +1,7 @@
 # .bash_profile
+# Exit on close is nice, but does not play well with nested tmux
+#[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+[ -z "$TMUX"  ] && { tmux attach || tmux;}
 
 
 export HISTSIZE=-1 
@@ -62,7 +65,6 @@ shopt -s no_empty_cmd_completion
 [ -f ~/.dev_profile ] && source ~/.dev_profile
 [ -f ~/.mac_profile ] && source ~/.mac_profile
 [ -f ~/.crostini_profile ] && source ~/.crostini_profile
-[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
 
 
 echo "Morning Sunshine!"

@@ -11,7 +11,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -19,9 +19,9 @@ Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
 "Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'psf/black'
+Plug 'psf/black', { 'for': 'python' }
 call plug#end()
 
 set showcmd		        " display incomplete commands

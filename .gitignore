@@ -10,3 +10,5 @@ pulse/
 configstore/
 cros-garcon.conf
 weston.ini
+fish/
+wireshark/

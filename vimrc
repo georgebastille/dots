@@ -20,8 +20,10 @@ Plug 'vim-airline/vim-airline'
 "Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'psf/black', { 'for': 'python' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -137,3 +139,5 @@ autocmd FileType go nmap <leader>m :<C-u>call <SID>build_go_files()<CR>
 
 "set cscopequickfix=s-,c-,d-,i-,t-,e-
 "set nocscopetag
+let g:deoplete#enable_at_startup = 1
+

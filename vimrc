@@ -10,20 +10,24 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-dispatch'
+"Plug 'tpope/vim-dispatch'
 "Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+"Plug 'w0rp/ale'
 "Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
-Plug 'psf/black', { 'for': 'python' }
+Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'tomasr/molokai'
 call plug#end()
 
 set showcmd		        " display incomplete commands
@@ -71,8 +75,9 @@ endif
 
 " Save
 
-set background=dark
-colorscheme elflord
+"set background=dark
+silent! colorscheme molokai
+"colorscheme elflord
 
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
@@ -97,6 +102,10 @@ set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
 set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 set number relativenumber
 
 set path+=**
@@ -136,8 +145,22 @@ endfunction
 
 autocmd FileType go nmap <leader>m :<C-u>call <SID>build_go_files()<CR>
 
+" vim-airline
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
 
 "set cscopequickfix=s-,c-,d-,i-,t-,e-
 "set nocscopetag
 let g:deoplete#enable_at_startup = 1
+
+" <CR>: close popup and save indent.
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function()
+"  return deoplete#smart_close_popup() . "\<CR>"
+"endfunction
+"inoremap <silent><expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
 

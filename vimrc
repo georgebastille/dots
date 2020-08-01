@@ -19,14 +19,15 @@ Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
-"Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 "Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
-Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' }
+"Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'tomasr/molokai'
 call plug#end()
 
@@ -48,6 +49,38 @@ inoremap <C-l> <C-o>l
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 inoremap <C-^> <C-o><C-^>
+
+"" fzf.vim
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+
+" The Silver Searcher
+if executable('ag')
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
+
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
 
 set splitbelow
 set splitright
@@ -128,7 +161,7 @@ endif
 " let g:flake8_show_in_gutter=1  " show
 
 " Run Black on save.
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
 
 " Go https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
@@ -148,7 +181,7 @@ autocmd FileType go nmap <leader>m :<C-u>call <SID>build_go_files()<CR>
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
+"let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
@@ -163,4 +196,23 @@ let g:deoplete#enable_at_startup = 1
 "  return deoplete#smart_close_popup() . "\<CR>"
 "endfunction
 "inoremap <silent><expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>"
+
+
+  " Use the global executable with a special name for flake8.
+  let g:ale_python_flake8_executable = '/home/richie/miniconda3/envs/neovim/bin/flake8'
+  let g:ale_python_flake8_use_global = 1
+  " Use the global executable with a special name for flake8.
+  let g:ale_python_mypy_executable = '/home/richie/miniconda3/envs/neovim/bin/mypy'
+  let g:ale_python_mypy_use_global = 1
+  " Use the global executable with a special name for flake8.
+  let g:ale_python_isort_executable = '/home/richie/miniconda3/envs/neovim/bin/isort'
+  let g:ale_python_isort_use_global = 1
+
+  let g:ale_linters = {
+\   'python': ['flake8', 'mypy'],
+\}
+  let g:ale_fixers = {
+\   'python': ['black', 'isort']
+\}
+  let g:ale_fix_on_save = 1
 

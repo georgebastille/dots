@@ -189,6 +189,8 @@ let g:airline_skip_empty_sections = 1
 "set cscopequickfix=s-,c-,d-,i-,t-,e-
 "set nocscopetag
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('auto_complete_popup', 'manual')
+inoremap <expr> <C-n>  deoplete#complete()
 
 " <CR>: close popup and save indent.
 "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -199,14 +201,17 @@ let g:deoplete#enable_at_startup = 1
 
 
   " Use the global executable with a special name for flake8.
-  let g:ale_python_flake8_executable = '/home/richie/miniconda3/envs/neovim/bin/flake8'
+  let g:ale_python_flake8_executable = expand('~') . '/miniconda3/envs/neovim/bin/flake8'
   let g:ale_python_flake8_use_global = 1
   " Use the global executable with a special name for flake8.
-  let g:ale_python_mypy_executable = '/home/richie/miniconda3/envs/neovim/bin/mypy'
+  let g:ale_python_mypy_executable = expand('~') . '/miniconda3/envs/neovim/bin/mypy'
   let g:ale_python_mypy_use_global = 1
   " Use the global executable with a special name for flake8.
-  let g:ale_python_isort_executable = '/home/richie/miniconda3/envs/neovim/bin/isort'
+  let g:ale_python_isort_executable = expand('~') . '/miniconda3/envs/neovim/bin/isort'
   let g:ale_python_isort_use_global = 1
+  " Use the global executable with a special name for flake8.
+  let g:ale_python_black_executable = expand('~') . '/miniconda3/envs/neovim/bin/black'
+  let g:ale_python_black_use_global = 1
 
   let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],

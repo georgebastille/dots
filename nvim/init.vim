@@ -25,7 +25,7 @@ Plug 'w0rp/ale'
 "Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
-"Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
+Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
@@ -163,7 +163,7 @@ endif
 " let g:flake8_show_in_gutter=1  " show
 
 " Run Black on save.
-" autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
 
 " Go https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
@@ -183,7 +183,7 @@ autocmd FileType go nmap <leader>m :<C-u>call <SID>build_go_files()<CR>
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-"let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
@@ -191,8 +191,11 @@ let g:airline_skip_empty_sections = 1
 "set cscopequickfix=s-,c-,d-,i-,t-,e-
 "set nocscopetag
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('auto_complete_popup', 'manual')
-inoremap <expr> <C-n>  deoplete#complete()
+" https://www.reddit.com/r/neovim/comments/6j9vcv/help_with_deoplete_autocompletion/
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"call deoplete#custom#option('auto_complete_popup', 'manual')
+"inoremap <expr> <C-n>  deoplete#complete()
 
 " <CR>: close popup and save indent.
 "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -212,14 +215,14 @@ let g:ale_python_mypy_use_global = 1
 let g:ale_python_isort_executable = expand('~') . '/miniconda3/envs/neovim/bin/isort'
 let g:ale_python_isort_use_global = 1
 " Use the global executable with a special name for flake8.
-let g:ale_python_black_executable = expand('~') . '/miniconda3/envs/neovim/bin/black'
-let g:ale_python_black_use_global = 1
+"let g:ale_python_black_executable = expand('~') . '/miniconda3/envs/neovim/bin/black'
+"let g:ale_python_black_use_global = 1
 
 let g:ale_linters = {
 \   'python': ['flake8', 'mypy'],
 \}
 let g:ale_fixers = {
-\   'python': ['black', 'isort']
+\   'python': ['isort']
 \}
 let g:ale_fix_on_save = 1
 

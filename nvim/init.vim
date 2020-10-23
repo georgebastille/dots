@@ -12,7 +12,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 "Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -25,12 +25,13 @@ Plug 'w0rp/ale'
 "Plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
-"Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
+Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'tomasr/molokai'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 set showcmd		        " display incomplete commands

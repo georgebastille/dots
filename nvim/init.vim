@@ -179,7 +179,7 @@ let g:airline_skip_empty_sections = 1
 let g:deoplete#enable_at_startup = 1
 " https://www.reddit.com/r/neovim/comments/6j9vcv/help_with_deoplete_autocompletion/
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : deoplete#manual_complete()
 
 " Use the global executable with a special name for flake8.
 let g:ale_python_flake8_executable = expand('~') . '/miniconda3/envs/neovim/bin/flake8'

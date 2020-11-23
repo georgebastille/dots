@@ -1,0 +1,4 @@
+pynvim
+black
+jedi
+mypy

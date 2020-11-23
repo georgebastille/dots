@@ -8,7 +8,7 @@ alias gs='git status'
 alias gco='git checkout'
 alias vim='nvim'
 
-EDITOR='nvim'
+EDITOR='vim'
 
 #WHITE=`tput setaf 7`
 #GREEN=`tput setaf 2`

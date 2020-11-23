@@ -3,6 +3,12 @@
 #[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
 [ -z "$TMUX"  ] && { tmux attach || tmux;}
 
+# Clean up python env
+# https://gist.github.com/MuhsinFatih/ee0154199803babb449b5bb98d3475f7
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+#export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 
 export HISTSIZE=-1 
 export HISTFILESIZE=-1
@@ -66,5 +72,4 @@ shopt -s no_empty_cmd_completion
 [ -f ~/.mac_profile ] && source ~/.mac_profile
 [ -f ~/.crostini_profile ] && source ~/.crostini_profile
 
-
-echo "Morning Sunshine!"
+echo "Hello there handsome!"

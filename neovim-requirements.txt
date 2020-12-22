@@ -1,4 +1,0 @@
-pynvim
-black
-jedi
-mypy

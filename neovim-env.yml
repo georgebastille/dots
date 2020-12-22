@@ -1,0 +1,11 @@
+name: neovim
+dependencies:
+  - python=3
+  - pip
+  - pip:
+    - black
+    - flake8
+    - isort
+    - jedi
+    - mypy
+    - pynvim

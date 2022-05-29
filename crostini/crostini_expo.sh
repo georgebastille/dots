@@ -2,7 +2,7 @@
 
 # nodejs & npm 
 cd ~
-curl -sL https://deb.nodesource.com/setup_12.x > node_install.sh
+curl -sL https://deb.nodesource.com/setup_16.x > node_install.sh
 chmod +x ./node_install.sh
 sudo bash ./node_install.sh
 sudo apt-get install -y nodejs

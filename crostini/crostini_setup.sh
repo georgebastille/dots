@@ -16,7 +16,7 @@ ln -s .config/bashrc .bashrc
 ln -s .config/bash_profile .bash_profile
 ln -s .config/crostini_profile .crostini_profile
 ln -s .config/inputrc .inputrc
-ln -s .config/vimrc .vimrc
+#ln -s .config/vimrc .vimrc
 ln -s .config/tmux.conf .tmux.conf
 ln -s .config/tmux .tmux
 ln -s .config/crostini_gitconfig .gitconfig
@@ -29,6 +29,6 @@ cd ~
 # Python
 ./crostini_python.sh
 # Golang
-./crostini_go.sh
+# ./crostini_go.sh
 # neovim
 sudo ./crostini_nvim.sh

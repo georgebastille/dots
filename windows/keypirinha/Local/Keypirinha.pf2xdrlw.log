@@ -1,0 +1,41 @@
+2023-01-04 20:19:29.433 [W] Application is installed in the Desktop folder. Catalog WILL NOT be refreshed automatically for this area
+2023-01-04 20:19:29.519 [i] Init done in 1.2550s, including 0.9486s (76%) for the Python interpreter.
+2023-01-04 20:19:29.519 [i] Plugin loaded: Internal.About
+2023-01-04 20:19:29.635 [i] Plugin loaded: Apps.CustomCmds (instance #1)
+2023-01-04 20:19:29.635 [i] Plugin loaded: Apps.Desktop (instance #1)
+2023-01-04 20:19:29.635 [i] Plugin loaded: Apps.EnvPath (instance #1)
+2023-01-04 20:19:29.635 [i] Plugin loaded: Apps.ExtraPaths (instance #1)
+2023-01-04 20:19:29.635 [i] Plugin loaded: Apps.StartMenu (instance #1)
+2023-01-04 20:19:29.709 [i] Plugin loaded: Bookmarks.Bookmarks (instance #1)
+2023-01-04 20:19:29.725 [i] Plugin loaded: Calc.Calc (instance #1)
+2023-01-04 20:19:29.725 [i] Plugin loaded: ControlPanel.ControlPanel (instance #1)
+2023-01-04 20:19:29.725 [i] Plugin loaded: Env.Env (instance #1)
+2023-01-04 20:19:29.725 [i] Plugin loaded: Everything.Everything (instance #1)
+2023-01-04 20:19:29.725 [i] Plugin loaded: FileBrowser.FileBrowser (instance #1)
+2023-01-04 20:19:29.752 [i] Plugin loaded: FilesCatalog.FilesCatalog (instance #1)
+2023-01-04 20:19:29.825 [i] Plugin loaded: FileZilla.FileZilla (instance #1)
+2023-01-04 20:19:29.825 [i] Plugin loaded: GoogleTranslate.GoogleTranslate (instance #1)
+2023-01-04 20:19:29.841 [i] Plugin loaded: PuTTY.PuTTY (instance #1)
+2023-01-04 20:19:29.841 [i] Plugin loaded: RegBrowser.RegBrowser (instance #1)
+2023-01-04 20:19:29.841 [i] Plugin loaded: String.String (instance #1)
+2023-01-04 20:19:29.841 [i] Plugin loaded: TaskSwitcher.TaskSwitcher (instance #1)
+2023-01-04 20:19:29.841 [i] Plugin loaded: URL.URL (instance #1)
+2023-01-04 20:19:29.857 [i] Plugin loaded: WebSearch.WebSearch (instance #1)
+2023-01-04 20:19:29.857 [i] Plugin loaded: WebSuggest.WebSuggest (instance #1)
+2023-01-04 20:19:29.857 [i] Plugin loaded: Winamp.Winamp (instance #1)
+2023-01-04 20:19:29.857 [i] Plugin loaded: WinSCP.WinSCP (instance #1)
+2023-01-04 20:19:29.961 [i] Apps.Desktop: Cataloged 2 items in 0.1 seconds
+2023-01-04 20:19:29.990 [i] Apps.StartMenu: Cataloged 113 items in 0.0 seconds
+2023-01-04 20:19:30.011 [i] Apps.EnvPath: Cataloged 746 items in 0.1 seconds
+2023-01-04 20:19:30.058 [i] Bookmarks.Bookmarks: Referenced 218 bookmarks
+2023-01-04 20:20:46.424 [i] Application configuration has changed
+2023-01-04 20:20:46.441 [i] Unloading ignored package: WebSuggest
+2023-01-04 20:20:46.441 [i] Unloading ignored package: URL
+2023-01-04 20:20:46.441 [i] Unloading ignored package: PuTTY
+2023-01-04 20:20:46.441 [i] Unloading ignored package: FileZilla
+2023-01-04 20:20:46.441 [i] Unloading ignored package: WinSCP
+2023-01-04 20:20:46.441 [i] Unloading ignored package: Everything
+2023-01-04 20:20:46.923 [i] Bookmarks.Bookmarks: Referenced 4 bookmarks
+2023-01-04 20:20:46.938 [i] WebSearch.WebSearch: Configuration changed, rebuilding catalog...
+2023-01-04 20:21:10.957 [i] WebSearch.WebSearch: Configuration changed, rebuilding catalog...
+2023-01-04 20:21:11.004 [i] Bookmarks.Bookmarks: Referenced 4 bookmarks

@@ -1,0 +1,531 @@
+{
+   ".header" : {
+      "creator" : "Keypirinha v2.26 (e037f62)",
+      "creator_url" : "http://keypirinha.com/",
+      "format" : 102,
+      "modified" : "2023-01-04T20:06:26+0000",
+      "type" : "history"
+   },
+   "history" : [
+      {
+         "action" : null,
+         "item" : 3723748687643271471,
+         "label" : "Rich (Person 1) - Chrome",
+         "time" : "2023-01-03T17:36:03+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3723748687643271471,
+         "label" : "Rich (Person 1) - Chrome",
+         "time" : "2023-01-04T11:04:00+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9120842333467815951,
+         "label" : "Google Chrome",
+         "time" : "2023-01-04T11:04:30+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3723748687643271471,
+         "label" : "Rich (Person 1) - Chrome",
+         "time" : "2023-01-04T11:04:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3723748687643271471,
+         "label" : "Rich (Person 1) - Chrome",
+         "time" : "2023-01-04T11:04:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9120842333467815951,
+         "label" : "Google Chrome",
+         "time" : "2023-01-04T11:04:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1485275054106232780,
+         "label" : "Switch To...",
+         "time" : "2023-01-04T11:05:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3884458615683946414,
+         "label" : "Switch To",
+         "time" : "2023-01-04T11:05:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 15675410614576547602,
+         "label" : "Bloomberg Meetings",
+         "time" : "2023-01-04T11:28:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3071750103993871855,
+         "label" : "Google Drive",
+         "time" : "2023-01-04T14:14:37+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14257308477926056897,
+         "label" : "B: standup",
+         "time" : "2023-01-04T14:18:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17674003608421757963,
+         "label" : "Control Panel: User Accounts",
+         "time" : "2023-01-04T14:21:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2023-01-04T14:29:17+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2023-01-04T14:29:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2023-01-04T14:29:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2023-01-04T14:34:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2023-01-04T14:34:29+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T14:37:57+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T14:38:02+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2023-01-04T14:38:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2023-01-04T14:38:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3884458615683946414,
+         "label" : "Switch To",
+         "time" : "2023-01-04T14:43:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T15:00:30+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3884458615683946414,
+         "label" : "Switch To",
+         "time" : "2023-01-04T15:02:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14171809868403069268,
+         "label" : "Rich (Rich Profile) - Chrome",
+         "time" : "2023-01-04T15:16:17+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14171809868403069268,
+         "label" : "Rich (Rich Profile) - Chrome",
+         "time" : "2023-01-04T15:16:57+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9120842333467815951,
+         "label" : "Google Chrome",
+         "time" : "2023-01-04T15:17:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3884458615683946414,
+         "label" : "Switch To",
+         "time" : "2023-01-04T15:17:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3884458615683946414,
+         "label" : "Switch To",
+         "time" : "2023-01-04T15:17:29+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7466558083844071915,
+         "label" : "B: assigned",
+         "time" : "2023-01-04T15:17:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T15:20:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14311062603081601391,
+         "label" : "Control Panel: Mouse",
+         "time" : "2023-01-04T15:35:37+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2023-01-04T16:02:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T16:26:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T16:35:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T16:57:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2023-01-04T16:57:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9120842333467815951,
+         "label" : "Google Chrome",
+         "time" : "2023-01-04T17:03:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10305768340399987810,
+         "label" : "B: reviews",
+         "time" : "2023-01-04T17:04:30+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14257308477926056897,
+         "label" : "B: standup",
+         "time" : "2023-01-04T17:04:40+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3884458615683946414,
+         "label" : "Switch To",
+         "time" : "2023-01-04T17:04:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10305768340399987810,
+         "label" : "B: reviews",
+         "time" : "2023-01-04T17:08:00+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2023-01-04T20:06:26+0000"
+      }
+   ],
+   "sets" : {
+      "actions" : [],
+      "items" : [
+         {
+            "args_hint" : "forbidden",
+            "category" : "url",
+            "hit_hint" : "noargs",
+            "id" : 7466558083844071915,
+            "label" : "B: assigned",
+            "loop_on_suggest" : false,
+            "plugin" : "Bookmarks.Bookmarks",
+            "short_desc" : "",
+            "target" : "https://drive.google.com/drive/search?q=followup:actionitems"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "url",
+            "hit_hint" : "noargs",
+            "id" : 10305768340399987810,
+            "label" : "B: reviews",
+            "loop_on_suggest" : false,
+            "plugin" : "Bookmarks.Bookmarks",
+            "short_desc" : "",
+            "target" : "https://bbgithub.dev.bloomberg.com/pulls/review-requested"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "url",
+            "hit_hint" : "noargs",
+            "id" : 14257308477926056897,
+            "label" : "B: standup",
+            "loop_on_suggest" : false,
+            "plugin" : "Bookmarks.Bookmarks",
+            "short_desc" : "",
+            "target" : "https://bloomberg.zoom.us/j/95967254526?pwd=UG5ZUVdlYkpZeVA4RmdrbFBESGZQQT09"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 15675410614576547602,
+            "label" : "Bloomberg Meetings",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.Desktop",
+            "short_desc" : "Desktop: Desktop",
+            "target" : "C:\\Users\\rhanes\\Desktop\\Bloomberg Meetings.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 11024467543566038853,
+            "label" : "Bloomberg Meetings",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Chrome Apps",
+            "target" : "C:\\Users\\rhanes\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Chrome Apps\\Bloomberg Meetings.lnk"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 14311062603081601391,
+            "label" : "Control Panel: Mouse",
+            "loop_on_suggest" : false,
+            "plugin" : "ControlPanel.ControlPanel",
+            "short_desc" : "Customize your mouse settings, such as the button configuration, double-click speed, mouse pointers, and motion speed.",
+            "target" : "{6C8EEC18-8D75-41B2-A177-8831D59D2D50}"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 17674003608421757963,
+            "label" : "Control Panel: User Accounts",
+            "loop_on_suggest" : false,
+            "plugin" : "ControlPanel.ControlPanel",
+            "short_desc" : "Change user account settings and passwords for people who share this computer.",
+            "target" : "{60632754-c523-4b62-b45c-4172da012619}"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 9120842333467815951,
+            "label" : "Google Chrome",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Google Chrome.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 3071750103993871855,
+            "label" : "Google Drive",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Google Drive.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 3723748687643271471,
+            "label" : "Rich (Person 1) - Chrome",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.Desktop",
+            "short_desc" : "Desktop: Desktop",
+            "target" : "C:\\Users\\rhanes\\Desktop\\Rich (Person 1) - Chrome.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 14171809868403069268,
+            "label" : "Rich (Rich Profile) - Chrome",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.Desktop",
+            "short_desc" : "Desktop: Desktop",
+            "target" : "C:\\Users\\rhanes\\Desktop\\Rich (Rich Profile) - Chrome.lnk"
+         },
+         {
+            "args_hint" : "required",
+            "category" : "file",
+            "hit_hint" : "noargs",
+            "id" : 3884458615683946414,
+            "label" : "Switch To",
+            "loop_on_suggest" : false,
+            "plugin" : "TaskSwitcher.TaskSwitcher",
+            "short_desc" : "Switch To: Bloomberg Meetings - Meetings (chrome)",
+            "target" : "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+         },
+         {
+            "args_hint" : "required",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 1485275054106232780,
+            "label" : "Switch To...",
+            "loop_on_suggest" : false,
+            "plugin" : "TaskSwitcher.TaskSwitcher",
+            "short_desc" : "Switch to a running application",
+            "target" : "switchto"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 11078848280100695130,
+            "label" : "WebSearch bbgithub",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search bbgithub",
+            "target" : "site=%27bbgithub%27"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 9811968570833690913,
+            "label" : "WebSearch GDrive",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search GDrive",
+            "target" : "site=%27gdrive%27"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 6224260951519299464,
+            "label" : "WebSearch Google",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search Google",
+            "target" : "site=%27google%27"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 6154904717792068230,
+            "label" : "WebSearch jira",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search jira",
+            "target" : "site=%27jira%27"
+         }
+      ],
+      "terms" : [
+         {
+            "items" : [ 7466558083844071915 ],
+            "search" : "ass"
+         },
+         {
+            "items" : [ 11078848280100695130 ],
+            "search" : "bb"
+         },
+         {
+            "items" : [ 9120842333467815951, 14171809868403069268, 3723748687643271471 ],
+            "search" : "chr"
+         },
+         {
+            "items" : [ 9120842333467815951 ],
+            "search" : "chro"
+         },
+         {
+            "items" : [ 9120842333467815951 ],
+            "search" : "chrom"
+         },
+         {
+            "items" : [ 3071750103993871855 ],
+            "search" : "drive"
+         },
+         {
+            "items" : [ 6154904717792068230 ],
+            "search" : "jira"
+         },
+         {
+            "items" : [ 11024467543566038853, 15675410614576547602 ],
+            "search" : "meet"
+         },
+         {
+            "items" : [ 14311062603081601391 ],
+            "search" : "mouse"
+         },
+         {
+            "items" : [ 10305768340399987810 ],
+            "search" : "rev"
+         },
+         {
+            "items" : [ 9811968570833690913 ],
+            "search" : "sd"
+         },
+         {
+            "items" : [ 6224260951519299464 ],
+            "search" : "sg"
+         },
+         {
+            "items" : [ 14257308477926056897 ],
+            "search" : "stan"
+         },
+         {
+            "items" : [ 3884458615683946414 ],
+            "search" : "sw"
+         },
+         {
+            "items" : [ 1485275054106232780 ],
+            "search" : "switch"
+         },
+         {
+            "items" : [ 17674003608421757963 ],
+            "search" : "user"
+         },
+         {
+            "items" : [ 6224260951519299464 ],
+            "search" : "websearch"
+         }
+      ]
+   }
+}

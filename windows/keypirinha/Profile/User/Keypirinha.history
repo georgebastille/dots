@@ -3,7 +3,7 @@
       "creator" : "Keypirinha v2.26 (e037f62)",
       "creator_url" : "http://keypirinha.com/",
       "format" : 102,
-      "modified" : "2024-01-10T17:21:16+0000",
+      "modified" : "2024-01-25T14:26:01+0000",
       "type" : "history"
    },
    "history" : [
@@ -10980,6 +10980,492 @@
          "item" : 12582819410174033773,
          "label" : "WebSearch guts",
          "time" : "2024-01-10T17:21:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7581054639423553761,
+         "label" : "Bloomberg",
+         "time" : "2024-01-11T09:43:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7581054639423553761,
+         "label" : "Bloomberg",
+         "time" : "2024-01-11T14:18:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-11T14:48:00+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-11T15:09:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3930920707403923161,
+         "label" : "Docs",
+         "time" : "2024-01-11T15:14:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-11T15:30:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-11T15:58:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7194224044602063643,
+         "label" : "Microsoft Intune Management Extension -> bcosv2",
+         "time" : "2024-01-11T16:19:00+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-11T16:32:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-11T17:05:10+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-12T09:23:52+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-12T09:58:17+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-12T10:06:47+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-12T10:13:25+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-12T13:58:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-12T14:00:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-12T15:24:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-12T15:46:03+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-12T16:21:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-17T11:30:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-17T11:51:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-17T11:51:26+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-17T14:02:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-17T15:08:03+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-17T15:55:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-17T16:29:31+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-17T16:38:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-18T09:52:04+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-18T14:01:53+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-18T14:02:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-18T14:24:56+0000"
+      },
+      {
+         "action" : 10512527877299607837,
+         "item" : 15597035596151636522,
+         "label" : "B: AI Apps Portal -> Open",
+         "time" : "2024-01-18T16:23:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-18T16:23:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-18T16:25:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-19T10:43:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-19T10:48:47+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-19T10:49:32+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-19T13:32:33+0000"
+      },
+      {
+         "action" : 10512527877299607837,
+         "item" : 15597035596151636522,
+         "label" : "B: AI Apps Portal -> Open",
+         "time" : "2024-01-19T15:31:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-19T15:31:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-19T15:42:52+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-19T15:44:50+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-19T16:57:04+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-19T17:23:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-22T09:56:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-22T13:18:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-22T13:54:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-22T13:58:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-22T14:21:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-22T14:29:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-22T16:23:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T09:40:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T09:46:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-23T09:54:28+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T09:56:02+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T15:10:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T15:11:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T15:37:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-23T16:43:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-24T09:38:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-24T10:21:19+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-24T10:24:24+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-24T11:30:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-24T14:40:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6154904717792068230,
+         "label" : "WebSearch jira",
+         "time" : "2024-01-24T14:42:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-24T14:43:24+0000"
+      },
+      {
+         "action" : null,
+         "item" : 13626763866617735713,
+         "label" : "Toolkit V5",
+         "time" : "2024-01-24T17:06:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12582819410174033773,
+         "label" : "WebSearch guts",
+         "time" : "2024-01-24T17:08:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T09:21:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T09:37:57+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T09:38:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10868661032501063248,
+         "label" : "Visual Studio Code",
+         "time" : "2024-01-25T09:40:10+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T09:45:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-25T09:46:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-25T09:49:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T12:03:06+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T12:07:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6224260951519299464,
+         "label" : "WebSearch Google",
+         "time" : "2024-01-25T12:11:28+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9811968570833690913,
+         "label" : "WebSearch GDrive",
+         "time" : "2024-01-25T13:45:13+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11024467543566038853,
+         "label" : "Bloomberg Meetings",
+         "time" : "2024-01-25T14:00:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11078848280100695130,
+         "label" : "WebSearch bbgithub",
+         "time" : "2024-01-25T14:26:01+0000"
       }
    ],
    "sets" : {
@@ -10993,6 +11479,17 @@
          }
       ],
       "items" : [
+         {
+            "args_hint" : "forbidden",
+            "category" : "url",
+            "hit_hint" : "noargs",
+            "id" : 15597035596151636522,
+            "label" : "B: AI Apps Portal",
+            "loop_on_suggest" : false,
+            "plugin" : "Bookmarks.Bookmarks",
+            "short_desc" : "",
+            "target" : "https://apps.ai.dev.bloomberg.com/"
+         },
          {
             "args_hint" : "forbidden",
             "category" : "url",
@@ -11074,6 +11571,17 @@
             "args_hint" : "accepted",
             "category" : "file",
             "hit_hint" : "keepall",
+            "id" : 7581054639423553761,
+            "label" : "Bloomberg",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Bloomberg",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Bloomberg\\Bloomberg.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
             "id" : 11024467543566038853,
             "label" : "Bloomberg Meetings",
             "loop_on_suggest" : false,
@@ -11141,6 +11649,18 @@
             "category" : "file",
             "hit_hint" : "keepall",
             "id" : 16990207263302360805,
+            "label" : "Microsoft Intune Management Extension",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Microsoft Intune Management Extension",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Intune Management Extension\\Microsoft Intune Management Extension.lnk"
+         },
+         {
+            "args" : "bcosv2",
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 7194224044602063643,
             "label" : "Microsoft Intune Management Extension",
             "loop_on_suggest" : false,
             "plugin" : "Apps.StartMenu",
@@ -11418,7 +11938,7 @@
       ],
       "terms" : [
          {
-            "items" : [ 3884458615683946414 ],
+            "items" : [ 15597035596151636522, 3884458615683946414 ],
             "search" : "ai"
          },
          {
@@ -11428,6 +11948,14 @@
          {
             "items" : [ 15012117822486029272 ],
             "search" : "bbv"
+         },
+         {
+            "items" : [ 7581054639423553761 ],
+            "search" : "BLOO"
+         },
+         {
+            "items" : [ 7581054639423553761 ],
+            "search" : "bloomberg"
          },
          {
             "items" : [ 14649534885531789775 ],
@@ -11504,6 +12032,10 @@
          {
             "items" : [ 11140916892303186133 ],
             "search" : "jria"
+         },
+         {
+            "items" : [ 3884458615683946414 ],
+            "search" : "low"
          },
          {
             "items" : [ 11024467543566038853 ],

@@ -5,12 +5,12 @@ sudo apt -y full-upgrade
 echo "Installing tmux, ag, rg"
 sudo apt install -y tmux silversearcher-ag ripgrep build-essential
 
-echo "Downloading and configuring dotfiles"
+#echo "Downloading and configuring dotfiles"
 cd ~
-mv .config .config2
-git clone https://github.com/georgebastille/.config.git
-mv .config2/* .config/
-rm -rf .config2
+#mv .config .config2
+#git clone https://github.com/georgebastille/.config.git
+#mv .config2/* .config/
+#rm -rf .config2
 mv .bashrc .bashrc-archive
 ln -s .config/bashrc .bashrc
 ln -s .config/bash_profile .bash_profile
@@ -30,5 +30,7 @@ cd ~
 ./crostini_python.sh
 # Golang
 # ./crostini_go.sh
+# node
+./crostini_expo.sh
 # neovim
 sudo ./crostini_nvim.sh

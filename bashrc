@@ -6,9 +6,9 @@ alias gitsuir='git submodule sync --recursive && git submodule update --init --r
 alias gp='git pull'
 alias gs='git status'
 alias gco='git checkout'
-alias vim='nvim'
+#alias vim='nvim'
 
-EDITOR='vim'
+EDITOR='nvim'
 
 #WHITE=`tput setaf 7`
 #GREEN=`tput setaf 2`

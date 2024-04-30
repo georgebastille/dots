@@ -16,6 +16,13 @@ rm ./nvim-linux64.tar.gz
 
 CUSTOM_NVIM_PATH=/opt/nvim-linux64/bin/nvim
 
+#install vimplug TODO - avoid root owning this file
+#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+#       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Install python env for neovim TODO
+# sh -c 'conda env create -f ~/.config/neovim-env.yml'
+
 set -u
 update-alternatives --remove-all ex
 update-alternatives --remove-all vi

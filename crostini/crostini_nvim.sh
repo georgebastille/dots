@@ -8,11 +8,14 @@ fi
 
 echo "Installing neovim"
 
-apt remove --purge -y vim*
+#apt remove --purge -y vim*
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+rm -rf /opt/nvim-linux64
+tar -C /opt -xzf nvim-linux64.tar.gz
+rm ./nvim-linux64.tar.gz
 
-CUSTOM_NVIM_PATH=/usr/local/bin/nvim
-curl -o ${CUSTOM_NVIM_PATH} -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-chmod +x ${CUSTOM_NVIM_PATH}
+CUSTOM_NVIM_PATH=/opt/nvim-linux64/bin/nvim
+
 set -u
 update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
 update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110

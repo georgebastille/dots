@@ -17,8 +17,16 @@ rm ./nvim-linux64.tar.gz
 CUSTOM_NVIM_PATH=/opt/nvim-linux64/bin/nvim
 
 set -u
+update-alternatives --remove-all ex
+update-alternatives --remove-all vi
+update-alternatives --remove-all view
+update-alternatives --remove-all vim
+update-alternatives --remove-all vimdiff
+update-alternatives --remove-all nvim
+
 update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
 update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
 update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
 update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
 update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
+update-alternatives --install /usr/bin/nvim nvim "${CUSTOM_NVIM_PATH}" 110

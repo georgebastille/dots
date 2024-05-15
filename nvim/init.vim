@@ -30,19 +30,25 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
 "Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
-Plug 'psf/black', { 'for': 'python'}
+" Plug 'psf/black', { 'for': 'python'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 "Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'tomasr/molokai'
-Plug 'justinmk/vim-sneak'
+"Plug 'tomasr/molokai'
+"Plug 'justinmk/vim-sneak'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/FixCursorHold.nvim'
+"Plug 'antoinemadec/FixCursorHold.nvim'
 
 call plug#end()
 
@@ -121,7 +127,7 @@ if v:version >= 703
   set undodir=/tmp//,.
 endif
 
-silent! colorscheme molokai
+silent! colorscheme torte
 
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
@@ -236,3 +242,81 @@ if has("nvim-0.5.0") || has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+
+lua << EOF
+
+-- lsp-zero
+local lsp_zero = require('lsp-zero')
+lsp_zero.extend_lspconfig()
+
+lsp_zero.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp_zero.default_keymaps({buffer = bufnr})
+end)
+lsp_zero.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
+-- end lsp-zero
+
+-- pyright lsp with ruff compatibility https://github.com/astral-sh/ruff-lsp?tab=readme-ov-file
+require('lspconfig').pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
+-- ruff lsp https://github.com/astral-sh/ruff-lsp?tab=readme-ov-file
+local on_attach = function(client, bufnr)
+  if client.name == 'ruff_lsp' then
+    -- Disable hover in favor of Pyright
+    client.server_capabilities.hoverProvider = false
+  end
+end
+
+require('lspconfig').ruff_lsp.setup {
+  on_attach = on_attach,
+}
+-- end ruff lsp
+
+
+-- treesitter
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the five listed parsers should always be installed)
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = { "javascript" },
+
+  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  }
+}
+-- end treesitter
+EOF

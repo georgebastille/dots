@@ -1,4 +1,20 @@
 set nocompatible
+" Bootstrap Plug
+let autoload_plug_path = stdpath('data') . '/site/autoload/plug.vim'
+if !filereadable(autoload_plug_path)
+  silent execute '!curl -fLo ' . autoload_plug_path . '  --create-dirs 
+      \ "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+unlet autoload_plug_path
+
+let g:python3_host_prog = expand('~/miniconda3/envs/neovim/bin/python')
+" Bootstrap Conda environment for neovim
+if !filereadable(g:python3_host_prog)
+  execute '!conda env create -f ~/.config/neovim-env.yml'
+endif
+
+" TODO add neovim node install here
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
@@ -22,10 +38,10 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
 " Plug 'psf/black', { 'for': 'python'}
 Plug 'neovim/nvim-lspconfig'
-"Plug 'hrsh7th/nvim-cmp'
-"Plug 'hrsh7th/cmp-nvim-lsp'
-"Plug 'L3MON4D3/LuaSnip'
-"Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
@@ -202,10 +218,26 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' '
 
-let g:ale_linters = {'python': ['blocklint', 'mypy'], 'javascript': ['eslint']}
+let g:ale_linters = {'python': ['ruff', 'blocklint', 'mypy'], 'javascript': ['eslint']}
+"set cscopequickfix=s-,c-,d-,i-,t-,e-
+"set nocscopetag
+"let g:deoplete#enable_at_startup = 1
+" https://www.reddit.com/r/neovim/comments/6j9vcv/help_with_deoplete_autocompletion/
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : deoplete#manual_complete()
+
+" Use the global executable with a special name for flake8.
+"let g:ale_python_flake8_executable = expand('~') . '/miniconda3/envs/neovim/bin/flake8'
+"let g:ale_python_flake8_use_global = 1
 "Use the global executable with a special name for flake8.
 "let g:ale_python_mypy_executable = expand('~') . '/miniconda3/envs/neovim/bin/mypy'
 "let g:ale_python_mypy_use_global = 1
+" Use the global executable with a special name for flake8.
+"let g:ale_python_isort_executable = expand('~') . '/miniconda3/envs/neovim/bin/isort'
+"let g:ale_python_isort_use_global = 1
+"let g:ale_linters = {'python': ['flake8', 'mypy'], 'javascript': ['eslint']}
+"let g:ale_fixers = {'python': ['isort'], 'javascript': ['eslint']}
+"let g:ale_fix_on_save = 1
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -239,43 +271,22 @@ endif
 
 lua << EOF
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+-- lsp-zero
+local lsp_zero = require('lsp-zero')
+lsp_zero.extend_lspconfig()
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-    callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', function()
-        vim.lsp.buf.format { async = true }
-        end, opts)
-    end,
+lsp_zero.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp_zero.default_keymaps({buffer = bufnr})
+end)
+lsp_zero.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
 })
+-- end lsp-zero
 
 -- pyright lsp with ruff compatibility https://github.com/astral-sh/ruff-lsp?tab=readme-ov-file
 require('lspconfig').pyright.setup {
@@ -312,7 +323,7 @@ require('lspconfig').clangd.setup {}
 -- treesitter
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  --  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "json", "markdown" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "json", "markdown" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -322,7 +333,7 @@ require'nvim-treesitter.configs'.setup {
   auto_install = true,
 
   -- List of parsers to ignore installing (or "all")
-  -- ignore_install = { "javascript" },
+  ignore_install = { "javascript" },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!

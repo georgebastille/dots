@@ -59,7 +59,7 @@ shopt -s histappend
 shopt -s no_empty_cmd_completion
 
 # After each command, save and reload history
-# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 [ -d ~/.config/bin ] && export PATH=~/.config/bin:$PATH
 [ -d ~/.bbconfig/bin ] && export PATH=~/.bbconfig/bin:$PATH

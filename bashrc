@@ -21,14 +21,14 @@ export PS1="\[\e[32m\]\A\[\e[m\] \[\e[31m\]\W\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/richie/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/rhanes/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/richie/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/richie/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/rhanes/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rhanes/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/richie/miniconda3/bin:$PATH"
+        export PATH="/home/rhanes/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

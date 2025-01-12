@@ -8,7 +8,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf.vim'
+Plug 'nvim-tree/nvim-web-devicons' " fzflua dependency
+Plug 'ibhagwan/fzf-lua'
 "Plug 'rking/ag.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'vim-airline/vim-airline'
@@ -292,19 +294,23 @@ require('lspconfig').pyright.setup {
     },
   },
 }
--- ruff lsp https://github.com/astral-sh/ruff-lsp?tab=readme-ov-file
-local on_attach = function(client, bufnr)
-  if client.name == 'ruff_lsp' then
-    -- Disable hover in favor of Pyright
-    client.server_capabilities.hoverProvider = false
-  end
-end
 
-require('lspconfig').ruff_lsp.setup {
-  on_attach = on_attach,
-}
--- end ruff lsp
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client == nil then
+      return
+    end
+    if client.name == 'ruff' then
+      -- Disable hover in favor of Pyright
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+  desc = 'LSP: Disable hover capability from Ruff',
+})
 
+require('lspconfig').ruff.setup {}
 
 require('lspconfig').clangd.setup {}
 

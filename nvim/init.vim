@@ -4,45 +4,20 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-"Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
 Plug 'nvim-tree/nvim-web-devicons' " fzflua dependency
 Plug 'ibhagwan/fzf-lua'
-"Plug 'rking/ag.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
+"Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'dense-analysis/ale'
-"Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'psf/black', { 'for': 'python', 'tag': '19.10b0' } " https://github.com/psf/black/issues/1293#issuecomment-596123193
-" Plug 'psf/black', { 'for': 'python'}
+Plug 'mfussenegger/nvim-lint'
 Plug 'neovim/nvim-lspconfig'
-"Plug 'hrsh7th/nvim-cmp'
-"Plug 'hrsh7th/cmp-nvim-lsp'
-"Plug 'L3MON4D3/LuaSnip'
-"Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-"Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-"Plug 'deoplete-plugins/deoplete-jedi'
-"Plug 'tomasr/molokai'
-"Plug 'justinmk/vim-sneak'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'antoinemadec/FixCursorHold.nvim'
-
 call plug#end()
 
-set showcmd		        " display incomplete commands
-set mouse=a
-" Do not attempt to connect to remote X Server clipboard
-" set clipboard=exclude:.*
 let mapleader      = ' '
 let maplocalleader = ' '
 
@@ -50,30 +25,6 @@ let maplocalleader = ' '
 inoremap jk <Esc>
 xnoremap jk <Esc>
 cnoremap jk <C-c>
-
-" Movement in insert mode
-inoremap <C-h> <C-o>h
-inoremap <C-l> <C-o>l
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-^> <C-o><C-^>
-
-"" fzf.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-
-" ripgrep
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-endif
 
 "*****************************************************************************
 "" Abbreviations
@@ -97,22 +48,14 @@ set splitright
 " <Leader>c Close quickfix/location window
 " ----------------------------------------------------------------------------
 nnoremap <leader>c :cclose<bar>lclose<cr>
-nnoremap <silent> <Leader><Leader> :Files<CR>
-nnoremap <silent> <Leader><Enter> :Buffers<CR>
+nnoremap <silent> <Leader><Leader> :FzfLua files<CR>
+nnoremap <silent> <Leader><Enter> :FzfLua buffers<CR>
+nnoremap <silent> <Leader>t :FzfLua diagnostics_document<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
- noremap <silent> <Leader>r :History:<CR>
-nnoremap <silent> <Leader>m :Make<CR>
 nnoremap <silent> <Leader>v <C-W>v
 nnoremap <silent> <Leader>s <C-W>s
 nnoremap <silent> <Leader>n :noh<CR>
 nnoremap <leader>w :update<cr>
-
-" Annoying temporary files
-set backupdir=/tmp//,.
-set directory=/tmp//,.
-if v:version >= 703
-  set undodir=/tmp//,.
-endif
 
 silent! colorscheme torte
 
@@ -127,8 +70,6 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-"autocmd FileType javascript set shiftwidth=2
-
 
 " Use %% as the path of the current buffer (without the filename)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -139,86 +80,8 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 set hlsearch
 set ignorecase
 set smartcase
-
 set number relativenumber
-
 set path+=**
-
-if has("gui_running")
-    " set macvim specific stuff
-    set guifont=Ubuntu\ Mono:h18
-    set clipboard=unnamed
-    " change cursor btw Normal & Insert mode
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-" Run Black on save.
-"autocmd BufWritePre *.py execute ':Black'
-
-" Go https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup
-"autocmd FileType go nmap <leader>r  <Plug>(go-run)
-"let g:go_list_type = "quickfix"
-" run :GoBuild or :GoTestCompile based on the go file
-"function! s:build_go_files()
-"  let l:file = expand('%')
-"  if l:file =~# '^\f\+_test\.go$'
-"    call go#test#Test(0, 1)
-"  elseif l:file =~# '^\f\+\.go$'
-"    call go#cmd#Build(0)
-"  endif
-"endfunction
-
-"autocmd FileType go nmap <leader>m :<C-u>call <SID>build_go_files()<CR>
-
-" vim-airline
-let g:airline_theme = 'supernova'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
-" air-line https://vi.stackexchange.com/a/3363
-let g:airline_powerline_fonts = 1
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_right_sep = '«'
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" airline symbols
-"let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.colnr = 'C:'
-let g:airline_symbols.crypt = ''
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ' '
-
-let g:ale_linters = {'python': ['blocklint', 'mypy'], 'javascript': ['eslint']}
-"Use the global executable with a special name for flake8.
-"let g:ale_python_mypy_executable = expand('~') . '/miniconda3/envs/neovim/bin/mypy'
-"let g:ale_python_mypy_use_global = 1
-
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -238,6 +101,43 @@ if has("nvim-0.5.0") || has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+
+" nvim-lint
+autocmd BufReadPost * lua require('lint').try_lint()
+autocmd BufWritePost * lua require('lint').try_lint()
+
+
+" vim-airline
+let g:airline_theme = 'supernova'
+let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+" air-line https://vi.stackexchange.com/a/3363
+"let g:airline_powerline_fonts = 1
+
+" unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_right_sep = '«'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_symbols.colnr = 'C:'
+"let g:airline_symbols.crypt = ''
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ' '
 
 lua << EOF
 
@@ -261,9 +161,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'h', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
     vim.keymap.set('n', '<space>wl', function()
@@ -313,6 +213,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 require('lspconfig').ruff.setup {}
 
 require('lspconfig').clangd.setup {}
+
+
+require('lint').linters_by_ft = {
+  python = {'mypy'},
+}
 
 
 -- treesitter

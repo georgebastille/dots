@@ -1,7 +1,8 @@
 set nocompatible
 
 call plug#begin()
-Plug 'tpope/vim-sensible'
+"Plug 'tpope/vim-sensible'
+Plug 'amarz45/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
@@ -11,7 +12,6 @@ Plug 'ibhagwan/fzf-lua'
 Plug 'jremmen/vim-ripgrep'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mfussenegger/nvim-lint'
@@ -41,9 +41,6 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-set splitbelow
-set splitright
-
 " ----------------------------------------------------------------------------
 " <Leader>c Close quickfix/location window
 " ----------------------------------------------------------------------------
@@ -56,51 +53,22 @@ nnoremap <silent> <Leader>v <C-W>v
 nnoremap <silent> <Leader>s <C-W>s
 nnoremap <silent> <Leader>n :noh<CR>
 nnoremap <leader>w :update<cr>
-
-silent! colorscheme torte
-
-set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
 
-" Automatically save before running make
-set autowrite
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
+silent! colorscheme torte
 
 " Use %% as the path of the current buffer (without the filename)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+set colorcolumn&
+set wildmode=longest:full,full
 
-set hlsearch
 set ignorecase
 set smartcase
-set number relativenumber
-set path+=**
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
 
 " nvim-lint
 autocmd BufReadPost * lua require('lint').try_lint()
@@ -108,7 +76,7 @@ autocmd BufWritePost * lua require('lint').try_lint()
 
 
 " vim-airline
-let g:airline_theme = 'supernova'
+let g:airline_theme = 'apprentice'
 let g:airline#extensions#branch#enabled = 1
 "let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -121,9 +89,9 @@ let g:airline_skip_empty_sections = 1
 "let g:airline_left_sep = '»'
 "let g:airline_right_sep = '«'
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+"if !exists('g:airline_symbols')
+    "let g:airline_symbols = {}
+"endif
 
 " airline symbols
 "let g:airline_symbols.paste = 'ρ'
@@ -186,12 +154,6 @@ require('lspconfig').pyright.setup {
       -- Using Ruff's import organizer
       disableOrganizeImports = true,
     },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-      },
-    },
   },
 }
 
@@ -211,39 +173,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 require('lspconfig').ruff.setup {}
-
 require('lspconfig').clangd.setup {}
-
-
 require('lint').linters_by_ft = {
   python = {'mypy'},
 }
 
-
 -- treesitter
 require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  --  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "json", "markdown" },
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
-
   -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
-
-  -- List of parsers to ignore installing (or "all")
-  -- ignore_install = { "javascript" },
-
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
   highlight = {
     enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   }
 }

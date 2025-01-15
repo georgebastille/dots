@@ -10,8 +10,9 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'nvim-tree/nvim-web-devicons' " fzflua dependency
 Plug 'ibhagwan/fzf-lua'
 Plug 'jremmen/vim-ripgrep'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mfussenegger/nvim-lint'
@@ -76,12 +77,13 @@ autocmd BufWritePost * lua require('lint').try_lint()
 
 
 " vim-airline
-let g:airline_theme = 'apprentice'
-let g:airline#extensions#branch#enabled = 1
+"let g:airline_theme = 'apprentice'
+"let g:airline#extensions#branch#enabled = 1
 "let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#nvimlsp#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
+"let g:airline_skip_empty_sections = 1
 " air-line https://vi.stackexchange.com/a/3363
 "let g:airline_powerline_fonts = 1
 
@@ -174,6 +176,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 require('lspconfig').ruff.setup {}
 require('lspconfig').clangd.setup {}
+require('lualine').setup {
+	options = { theme = 'material' }
+}
+
 require('lint').linters_by_ft = {
   python = {'mypy'},
 }

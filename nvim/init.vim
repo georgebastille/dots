@@ -1,8 +1,6 @@
 set nocompatible
 
 call plug#begin()
-"Plug 'tpope/vim-sensible'
-Plug 'amarz45/vim-sensible'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
@@ -11,12 +9,16 @@ Plug 'nvim-tree/nvim-web-devicons' " fzflua dependency
 Plug 'ibhagwan/fzf-lua'
 Plug 'jremmen/vim-ripgrep'
 Plug 'nvim-lualine/lualine.nvim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mfussenegger/nvim-lint'
 Plug 'neovim/nvim-lspconfig'
+" vim-cmp
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 call plug#end()
 
 let mapleader      = ' '
@@ -46,25 +48,24 @@ cnoreabbrev Qall qall
 " <Leader>c Close quickfix/location window
 " ----------------------------------------------------------------------------
 nnoremap <leader>c :cclose<bar>lclose<cr>
-nnoremap <silent> <Leader><Leader> :FzfLua files<CR>
-nnoremap <silent> <Leader><Enter> :FzfLua buffers<CR>
-nnoremap <silent> <Leader>t :FzfLua diagnostics_document<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
-nnoremap <silent> <Leader>v <C-W>v
-nnoremap <silent> <Leader>s <C-W>s
-nnoremap <silent> <Leader>n :noh<CR>
+nnoremap <Leader><Leader> :FzfLua files<CR>
+nnoremap <Leader><Enter> :FzfLua buffers<CR>
+nnoremap <Leader>t :FzfLua diagnostics_document<CR>
+nnoremap <Leader>rg :Rg<CR>
+nnoremap <Leader>v <C-W>v
+nnoremap <Leader>s <C-W>s
+nnoremap <Leader>n :noh<CR>
 nnoremap <leader>w :update<cr>
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 
 silent! colorscheme torte
 
 " Use %% as the path of the current buffer (without the filename)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-set cursorline
-set colorcolumn&
+set title number relativenumber numberwidth=1 nofoldenable mouse=nvi cursorline
+set tabstop=4 shiftwidth=0 smartindent 
 set wildmode=longest:full,full
-
 set ignorecase
 set smartcase
 
@@ -74,40 +75,6 @@ set shortmess+=c
 " nvim-lint
 autocmd BufReadPost * lua require('lint').try_lint()
 autocmd BufWritePost * lua require('lint').try_lint()
-
-
-" vim-airline
-"let g:airline_theme = 'apprentice'
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline#extensions#ale#enabled = 1
-"let g:airline#extensions#nvimlsp#enabled = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tagbar#enabled = 1
-"let g:airline_skip_empty_sections = 1
-" air-line https://vi.stackexchange.com/a/3363
-"let g:airline_powerline_fonts = 1
-
-" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_right_sep = '«'
-
-"if !exists('g:airline_symbols')
-    "let g:airline_symbols = {}
-"endif
-
-" airline symbols
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.whitespace = 'Ξ'
-"let g:airline_symbols.colnr = 'C:'
-"let g:airline_symbols.crypt = ''
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ' '
 
 lua << EOF
 
@@ -131,7 +98,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'h', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
@@ -158,30 +125,65 @@ require('lspconfig').pyright.setup {
     },
   },
 }
-
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client == nil then
-      return
-    end
-    if client.name == 'ruff' then
-      -- Disable hover in favor of Pyright
-      client.server_capabilities.hoverProvider = false
-    end
-  end,
-  desc = 'LSP: Disable hover capability from Ruff',
-})
-
 require('lspconfig').ruff.setup {}
 require('lspconfig').clangd.setup {}
 require('lualine').setup {
 	options = { theme = 'material' }
 }
-
 require('lint').linters_by_ft = {
   python = {'mypy'},
+}
+-- Set up nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+snippet = {
+  expand = function(args)
+	vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+  end,
+},
+window = {
+  -- completion = cmp.config.window.bordered(),
+  -- documentation = cmp.config.window.bordered(),
+},
+mapping = cmp.mapping.preset.insert({
+  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+  ['<C-f>'] = cmp.mapping.scroll_docs(4),
+  ['<C-Space>'] = cmp.mapping.complete(),
+  ['<C-e>'] = cmp.mapping.abort(),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+}),
+sources = cmp.config.sources({
+  { name = 'nvim_lsp' },
+}, {
+  { name = 'buffer' },
+})
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+mapping = cmp.mapping.preset.cmdline(),
+sources = {
+  { name = 'buffer' }
+}
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+mapping = cmp.mapping.preset.cmdline(),
+sources = cmp.config.sources({
+  { name = 'path' }
+}, {
+  { name = 'cmdline' }
+}),
+matching = { disallow_symbol_nonprefix_matching = false }
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig')['pyright'].setup {
+capabilities = capabilities
 }
 
 -- treesitter

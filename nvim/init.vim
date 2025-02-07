@@ -64,8 +64,7 @@ silent! colorscheme torte
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 set title number relativenumber numberwidth=1 nofoldenable mouse=nvi cursorline
-set tabstop=4 shiftwidth=0 
-"smartindent 
+set tabstop=4 shiftwidth=0 smartindent 
 set wildmode=longest:full,full
 set ignorecase
 set smartcase
@@ -197,7 +196,7 @@ require'nvim-treesitter.configs'.setup {
 		additional_vim_regex_highlighting = false,
 	},
 	indent = {
-		enable = true,
+		enable = false,
 	},
 }
 -- end treesitter

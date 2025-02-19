@@ -14,7 +14,7 @@ git switch stow
 for path in "${toStowDirs[@]}"
 do
 	echo "Linking $path ..."
-	#stow --adopt $path
+	stow --adopt $path
 done
 
 git commit -am "Overidden Config files"

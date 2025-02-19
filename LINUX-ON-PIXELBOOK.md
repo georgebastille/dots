@@ -4,6 +4,9 @@ Tried a few distros, some quite bulky, ended up with Manjaro Sway edition and it
 
 A few note for me to remmeber to do a full install.
 
+
+Install the scripts from Chrultrabok for keybindings and sound
+
 ### File picker for Zed
 sudo pacman -S xdg-desktop-portal-lxqt
 
@@ -16,8 +19,14 @@ KEYBOARD_KEY_d8=leftmeta
 KEYBOARD_KEY_db=leftctrl
 
 ### Install fish
-Then install fisher, then install the tide prompt:  
+Then install fisher https://github.com/jorgebucaran/fisher
+
+then install the tide prompt:  
 https://github.com/IlanCosman/tide  
+
+fzf keybindings 
+https://github.com/PatrickF1/fzf.fish
+
 To get brew working with fish use this:  
 https://github.com/orgs/Homebrew/discussions/4412
 
@@ -27,3 +36,6 @@ https://github.com/manjaro-sway/manjaro-sway/blob/main/SUPPORT.md
 ### Stuff to install
 vimplug, zed, uv, fd, ripgrep, tmux, fish  
 Do this with native pacman or with homebrew?
+
+### Full install with SuzyQ
+https://github.com/yusefnapora/pixelbook-linux/blob/master/README.md#installation

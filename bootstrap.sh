@@ -8,10 +8,13 @@
 #
 sudo pacman -S tmux ripgrep fd, bat, nodejs, fish, neovim, fzf, uv
 
-toLinkDirs = (fish nvim sway tmux waybar zed)
+toStowDirs = (fish nvim sway tmux waybar zed)
+git checkout -b stow
 
-for path in "${toLinkConfig[@]}"
+for path in "${toStowConfig[@]}"
 do
-	[ -d "~/.config/$path" ] && mv "~/.config/$path" "~/.config/$path.old"
-	ln -s "$path" ~/.config/
+	echo "Linking $path ..."
+	stow --adopt $path
 done
+
+echo "Existing config files copied back, remember to git restore before pushing"

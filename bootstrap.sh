@@ -1,13 +1,14 @@
 #!/bin/bash
+set -e
 
-# Setup sudo privs
-# setup package installer
+# TODO
+# Setup distro independent sudo privs
+# Setup distro independent package installer
 #
-# Install packages
-# tmux, ripgrep, fd, bat, nodejs, npm, fish, neovim, fzf, uv
-#
+# For Arch based distros
 sudo pacman -S tmux ripgrep fd bat nodejs fish neovim fzf uv
 
+# Linking dot files
 toStowDirs=(fish nvim sway tmux waybar zed)
 git switch stow
 

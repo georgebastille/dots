@@ -6,7 +6,7 @@ set -e
 # Setup distro independent package installer
 #
 # For Arch based distros
-sudo pacman -S tmux ripgrep fd bat nodejs fish neovim fzf uv
+# sudo pacman -S tmux ripgrep fd bat nodejs fish neovim fzf uv
 
 # Linking dot files
 toStowDirs=(fish nvim sway tmux waybar zed)
